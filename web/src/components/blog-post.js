@@ -39,7 +39,7 @@ function BlogPost (props) {
             <h1 className={styles.title}>{title}</h1>
             {_rawBody && <PortableText blocks={_rawBody} />}
           </div>
-          <commentsBlock />
+          
           <aside className={styles.metaContent}>
             {publishedAt && (
               <div className={styles.publishedAt}>
@@ -60,6 +60,7 @@ function BlogPost (props) {
               </div>
             )}
           </aside>
+          <commentsBlock />
         </div>
       </Container>
     </article>
