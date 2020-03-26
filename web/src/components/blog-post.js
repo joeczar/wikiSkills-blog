@@ -10,6 +10,14 @@ import styles from './blog-post.module.css'
 
 function BlogPost (props) {
   const {_rawBody, authors, categories, title, mainImage, publishedAt} = props
+  const commentsBlock = (
+    <div>
+      <hr />
+      <h2>Comments</h2>
+      <p>No comments yet.</p>
+    </div>
+  )
+
   return (
     <article className={styles.root}>
       {mainImage && mainImage.asset && (
@@ -31,6 +39,7 @@ function BlogPost (props) {
             <h1 className={styles.title}>{title}</h1>
             {_rawBody && <PortableText blocks={_rawBody} />}
           </div>
+          <commentsBlock />
           <aside className={styles.metaContent}>
             {publishedAt && (
               <div className={styles.publishedAt}>
