@@ -5,18 +5,12 @@ import {imageUrlFor} from '../lib/image-url'
 import PortableText from './portableText'
 import Container from './container'
 import AuthorList from './author-list'
+import CommentsBlock from './commentsBlock'
 
 import styles from './blog-post.module.css'
 
 function BlogPost (props) {
-  const {_rawBody, authors, categories, title, mainImage, publishedAt} = props
-  const commentsBlock = (
-    <div>
-      <hr />
-      <h2>Comments</h2>
-      <p>No comments yet.</p>
-    </div>
-  )
+  const {_rawBody, authors, categories, title, mainImage, publishedAt, pageContext} = props
 
   return (
     <article className={styles.root}>
@@ -60,7 +54,7 @@ function BlogPost (props) {
               </div>
             )}
           </aside>
-          <commentsBlock />
+          <CommentsBlock pathContext={pageContext} />
         </div>
       </Container>
     </article>
