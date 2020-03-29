@@ -13,10 +13,10 @@ comments:
   #
   # Name of the branch being used. Must match the one sent in the URL of the
   # request.
-  branch: master
+  branch: "master"
 
   # Text to use as the commit message or pull request title. Accepts placeholders.
-  commitMessage: "Comment from {fields.name} on {options.slug}"
+  commitMessage: "Added comment to {options.slug}"
 
   # (*) REQUIRED
   #
@@ -35,7 +35,7 @@ comments:
     date:
       type: date
       options:
-        format: "timestamp-seconds"
+        format: "iso8601"
 
   # Whether entries need to be appproved before they are published to the main
   # branch. If set to `true`, a pull request will be created for your approval.
@@ -43,29 +43,29 @@ comments:
   moderation: true
 
   # Name of the site. Used in notification emails.
-  name: "WikiSkills.org"
+  name: "wikiskills.org"
 
   # Notification settings. When enabled, users can choose to receive notifications
   # via email when someone adds a reply or a new comment. This requires an account
   # with Mailgun, which you can get for free at http://mailgun.com.
   #notifications:
-    # Enable notifications
-    #enabled: true
+  # Enable notifications
+  #enabled: true
 
-    # (!) ENCRYPTED
-    #
-    # Mailgun API key
-    #apiKey: "1q2w3e4r"
+  # (!) ENCRYPTED
+  #
+  # Mailgun API key
+  #apiKey: "1q2w3e4r"
 
-    # (!) ENCRYPTED
-    #
-    # Mailgun domain (encrypted)
-    #domain: "4r3e2w1q"
+  # (!) ENCRYPTED
+  #
+  # Mailgun domain (encrypted)
+  #domain: "4r3e2w1q"
 
   # (*) REQUIRED
   #
   # Destination path (directory) for the data files. Accepts placeholders.
-  path: "_data/comments/{options.slug}"
+  path: "pages/blog/comments/{options.slug}"
 
   # Names of required fields. If any of these isn't in the request or is empty,
   # an error will be thrown.
@@ -75,7 +75,3 @@ comments:
   # the name of the field and values are possible transformation types.
   transforms:
     email: md5
-
-  reCaptcha:
-    siteKey: 6LcWstQUAAAAALoGBcmKsgCFbMQqkiGiEt361nK1
-    secret: x3hQv+bPs/10Ovck9I4vJAVaE7bOA+TTp5ZDAkl9nOaFwM7K4zaUhsRck1v6SuJsg9PS8A3CxppTRN7d3lgg0RgY9EuRaMrpnNVh8przkFiiBSAPb9Asl3oyDp2cWXNDRzX9FZUy3pplzloGqaEsW0VOpgubPXLm42RvdyeVoA8/nsPYeVsMcYGh9fqWihfvdO2GKWqm56IS5QRyW5cjn3ti0yNHpTfnZXOIp54kkRlqoRHNTo+IoNA0eRmQsB3O76yDg78P4WMICJ0ByITTQlsbZjT6eL2Woo6awOly9oPgeTd5o/CSj5x99DMDK7xDvQ2KkK1pKr6V14A5hidy/SXIbvltTbJKiGlSzqMJAA5LitCuJNtWrQnIu7CG4YmWcSMuLj/rvmniWrCksD0ZY6Txn1FeQ0NICPoQ3otmZVfxXqcwvnwATcA/ftjx+lReMokb8ZeOWOvj8nBX/ciKUtD7K8h9Mf5BGNibvAtX+VenfsJkH75F6vsG4kdFR0oyg+EZxNC/7MIhlK03ukd0LrSNaD7On9gWpoEzbfhKLTKHxT7aqTmHRuaZSrEjWqHtDOI5DB86lzFjc5tpRkxcDg0oPyxvCg4R6h2VwNGnnhCTszljxdWlxztlcLsRBszqZHXK+QaCKeM0Xu4D++w5mZPOIIKgnkcuk2QyCA6uW7I=
