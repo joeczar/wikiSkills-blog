@@ -17,13 +17,13 @@ permalink: /:categories/:year/:month/:day/:title:output_ext
 google_analytics: UA-136594956-1
 
 # me info
-email: joe@joeczarnecki.com
-author:
-  name: Joe Czarnecki
-  email: joe@joeczarnecki.com
-  twitter: joeczar
-twitter_username: joeczar
-github_username: joeczar
+# email: joe@joeczarnecki.com
+# author:
+#   name: Joe Czarnecki
+#   email: joe@joeczarnecki.com
+#   twitter: joeczar
+# twitter_username: joeczar
+# github_username: joeczar
 
 # Build settings
 markdown: kramdown
