@@ -31,11 +31,7 @@ markdown: kramdown
 theme: minima
 
 # staticman (comments) configuration
-staticman_url: https://https://staticman-axiomshift.herokuapp.com/v2/entry/staticBot/wikiSkills-blog/master/comments
-
-reCaptcha:
-  siteKey: 6LcWstQUAAAAALoGBcmKsgCFbMQqkiGiEt361nK1
-  secret: x3hQv+bPs/10Ovck9I4vJAVaE7bOA+TTp5ZDAkl9nOaFwM7K4zaUhsRck1v6SuJsg9PS8A3CxppTRN7d3lgg0RgY9EuRaMrpnNVh8przkFiiBSAPb9Asl3oyDp2cWXNDRzX9FZUy3pplzloGqaEsW0VOpgubPXLm42RvdyeVoA8/nsPYeVsMcYGh9fqWihfvdO2GKWqm56IS5QRyW5cjn3ti0yNHpTfnZXOIp54kkRlqoRHNTo+IoNA0eRmQsB3O76yDg78P4WMICJ0ByITTQlsbZjT6eL2Woo6awOly9oPgeTd5o/CSj5x99DMDK7xDvQ2KkK1pKr6V14A5hidy/SXIbvltTbJKiGlSzqMJAA5LitCuJNtWrQnIu7CG4YmWcSMuLj/rvmniWrCksD0ZY6Txn1FeQ0NICPoQ3otmZVfxXqcwvnwATcA/ftjx+lReMokb8ZeOWOvj8nBX/ciKUtD7K8h9Mf5BGNibvAtX+VenfsJkH75F6vsG4kdFR0oyg+EZxNC/7MIhlK03ukd0LrSNaD7On9gWpoEzbfhKLTKHxT7aqTmHRuaZSrEjWqHtDOI5DB86lzFjc5tpRkxcDg0oPyxvCg4R6h2VwNGnnhCTszljxdWlxztlcLsRBszqZHXK+QaCKeM0Xu4D++w5mZPOIIKgnkcuk2QyCA6uW7I=
+staticman_url: https://https://staticman-axiomshift.herokuapp.com/v3/entry/staticBot/wikiSkills-blog/master/comments
 
 
 defaults:
