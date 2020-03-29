@@ -30,7 +30,7 @@ markdown: kramdown
 theme: minima
 
 # staticman (comments) configuration
-staticman_url: https://https://staticman-axiomshift.herokuapp.com/v2/entry/staticBot/wikiSkills-blog/master/comments
+staticman_url: https://staticman-axiomshift.herokuapp.com/v2/entry/staticBot/wikiSkills-blog/master/comments
 
 defaults:
   # Post defaults
