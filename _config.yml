@@ -7,32 +7,30 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-
 # blog info
-title: Performance Matters
+title: WikiSkills
 description: >- # this means to ignore newlines until "baseurl:"
-  WikiSkills, Rethinking Education.
+  Rethinking Education.
 baseurl: / # the subpath of your site, e.g. /blog
 url: "https://wikiskills.org"
 permalink: /:categories/:year/:month/:day/:title:output_ext
 google_analytics: UA-136594956-1
 
 # me info
-email: &email joe@joeczarnecki.com
+email: joe@joeczarnecki.com
 author:
   name: Joe Czarnecki
-  email: *email
+  email: joe@joeczarnecki.com
   twitter: joeczar
 twitter_username: joeczar
-github_username:  joeczar
+github_username: joeczar
 
 # Build settings
 markdown: kramdown
 theme: minima
 
 # staticman (comments) configuration
-staticman_url: https://https://staticman-axiomshift.herokuapp.com/v3/entry/staticBot/wikiSkills-blog/master/comments
-
+staticman_url: https://https://staticman-axiomshift.herokuapp.com/v2/entry/staticBot/wikiSkills-blog/master/comments
 
 defaults:
   # Post defaults
@@ -41,7 +39,6 @@ defaults:
       type: posts
     values:
       comments: true
-
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
