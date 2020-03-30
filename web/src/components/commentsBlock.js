@@ -9,7 +9,7 @@ const CommentsBlock = (pageContext) => {
       <h3 id={styles.subtitle}>Add a comment</h3>
       <form className={styles.form}
         method='POST'
-        action='https://staticman-dev-axiomshift.herokuapp.com/v2/entry/static-bot/wikiSkills-blog/master/comments'
+        action='https://staticman-dev-axiomshift.herokuapp.com/v2/entry/joeczar/wikiSkills-blog/master/comments'
       >
         <input id={styles.name}
           name='options[slug]'
