@@ -23,7 +23,7 @@ class ContactForm extends React.Component {
         'name': fullname,
         'email': email,
         'message': message,
-        'pageContext': pageContext
+        'page-context': pageContext
       }
     }]
 
