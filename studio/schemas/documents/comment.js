@@ -4,11 +4,6 @@ export default {
   title: 'Comment',
   fields: [
     {
-      _id: 'id',
-      type: 'string',
-      title: 'ID'
-    },
-    {
       name: 'name',
       type: 'string',
       title: 'Name'
@@ -35,4 +30,3 @@ export default {
     }
   ]
 }
-  
