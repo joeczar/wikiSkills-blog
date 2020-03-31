@@ -19,11 +19,6 @@ export default {
       title: 'Message'
     },
     {
-      name: 'date',
-      type: 'string',
-      title: 'Date'
-    },
-    {
       name: 'pagecontext',
       type: 'string',
       title: 'Page Context'
