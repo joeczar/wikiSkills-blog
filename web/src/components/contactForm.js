@@ -1,6 +1,17 @@
 import React from 'react'
-import {navigate} from 'gatsby-link'
-import {fetch, alert} from 'fetch-ponyfill'
+// import {navigate} from 'gatsby'
+import Recaptcha from 'react-google-recaptcha'
+import axios from 'axios'
+
+const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY
+if (typeof RECAPTCHA_KEY === 'undefined') {
+  throw new Error(`
+  Env var GATSBY_APP_SITE_RECAPTCHA_KEY is undefined! 
+  You probably forget to set it in your Netlify build environment variables. 
+  Make sure to get a Recaptcha key at https://www.netlify.com/docs/form-handling/#custom-recaptcha-2-with-your-own-settings
+  Note this demo is specifically for Recaptcha v2
+  `)
+}
 
 function encode (data) {
   return Object.keys(data)
@@ -8,8 +19,9 @@ function encode (data) {
     .join('&')
 }
 
-export default function Contact () {
+export default function Contact (pageContext) {
   const [state, setState] = React.useState({})
+  const recaptchaRef = React.createRef()
 
   const handleChange = (e) => {
     setState({...state, [e.target.name]: e.target.value})
@@ -18,35 +30,57 @@ export default function Contact () {
   const handleSubmit = (e) => {
     e.preventDefault()
     const form = e.target
-    fetch('/', {method: 'POST',
-      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-      body: encode({
-        'form-name': form.getAttribute('name'),
-        ...state
-      })
+    const recaptchaValue = recaptchaRef.current.getValue()
+    // fetch('/', {
+    //   method: 'POST',
+    //   headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    //   body: encode({
+    //     'form-name': form.getAttribute('name'),
+    //     'g-recaptcha-response': recaptchaValue,
+    //     ...state
+    //   })
+    // })
+    //   .then(() => navigate(form.getAttribute('action')))
+    //   .catch((error) => alert(error))
+    const mutations = [{
+      'createIfNotExists': {
+        'name': form.getAttribute('name'),
+        'email': form.getAttribute('email'),
+        'message': form.getAttribute('message'),
+        'pageContext': pageContext
+      }
+    }]
+    const jsonMutations = JSON.stringify({mutations})
+
+    axios.post('https://c1jubcn4.api.sanity.io/v1/data/mutate/production/', {
+      method: 'post',
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${process.env.Authorization}`
+      },
+      body:
+      encode({'g-recaptcha-response': recaptchaValue}),
+      jsonMutations
     })
-      .then(() => navigate(form.getAttribute('action')))
-      .catch((error) => alert(error))
+      .then(response => response.json())
+      .then(result => console.log(result))
+      .catch(error => console.error(error))
   }
 
   return (
     <div>
-      <h1>Contact</h1>
+      <h1>Comment</h1>
       <form
-        name='contact'
+        name='contact-recaptcha'
         method='post'
         action='/thanks/'
         data-netlify='true'
-        data-netlify-honeypot='bot-field'
+        data-netlify-recaptcha='true'
         onSubmit={handleSubmit}
       >
-        {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-        <input type='hidden' name='form-name' value='contact' />
-        <p hidden>
-          <label>
-            Don’t fill this out: <input name='bot-field' onChange={handleChange} />
-          </label>
-        </p>
+        <noscript>
+          <p>This form won’t work with Javascript disabled</p>
+        </noscript>
         <p>
           <label>
             Your name:
@@ -68,6 +102,7 @@ export default function Contact () {
             <textarea name='message' onChange={handleChange} />
           </label>
         </p>
+        <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
         <p>
           <button type='submit'>Send</button>
         </p>

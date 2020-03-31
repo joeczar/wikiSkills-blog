@@ -8,28 +8,31 @@ const Comment = (pageContext) => {
       <h2 id={styles.title}>Comments</h2>
       <h3 id={styles.subtitle}>Add a comment</h3>
       <form className={styles.form}
-        netlify
         netlify-honeypot='bot-field'
-        data-netlify-recaptcha='true'
         data-netlify='true'
-        method='POST'
       >
         <input type='hidden' name='comment' value='comment' />
 
-        <input id={styles.name}
+        <input id='pageContext'
           name='options[slug]'
           type='hidden'
           value={pageContext.slug}
         />
-        <input name='fields[name]' type='text' placeholder='Name' required />
+        <input id='nameInput'
+          name='fields[name]'
+          type='text'
+          placeholder='Name'
+          required />
 
         <input className={styles.email}
+          id='emailInput'
           name='fields[email]'
           type='email'
           placeholder='Email'
           required
         />
-        <textarea className={styles.comment}
+        <textarea className='comment'
+          id='commentInput'
           name='fields[message]'
           placeholder='Comment'
           required

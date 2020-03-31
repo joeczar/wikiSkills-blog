@@ -19,7 +19,7 @@ export default {
       title: 'Message'
     },
     {
-      name: 'pagecontext',
+      name: 'pageContext',
       type: 'string',
       title: 'Page Context'
     }
