@@ -18,6 +18,8 @@
     "lerna": "^3.13.1"
   },
   "dependencies": {
+    "fetch-ponyfill": "^6.1.0",
+    "react-google-recaptcha": "^2.0.1",
     "socket.io-client": "^2.1.1"
   }
 }

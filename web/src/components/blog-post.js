@@ -5,7 +5,7 @@ import {imageUrlFor} from '../lib/image-url'
 import PortableText from './portableText'
 import Container from './container'
 import AuthorList from './author-list'
-import CommentsBlock from './commentsBlock'
+import Comment from './comment'
 
 import styles from './blog-post.module.css'
 
@@ -54,7 +54,7 @@ function BlogPost (props) {
               </div>
             )}
           </aside>
-          <CommentsBlock pathContext={pageContext} />
+          <Comment pathContext={pageContext} />
         </div>
       </Container>
     </article>
