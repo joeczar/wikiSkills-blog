@@ -47,7 +47,7 @@ export default function Contact (pageContext) {
         'name': form.getAttribute('name'),
         'email': form.getAttribute('email'),
         'message': form.getAttribute('message'),
-        'pageContext': pageContext
+        'PageContext': pageContext
       }
     }]
     const jsonMutations = JSON.stringify({mutations})
