@@ -8,6 +8,8 @@ const Comment = (pageContext) => {
       <h2 id={styles.title}>Comments</h2>
       <h3 id={styles.subtitle}>Add a comment</h3>
       <form className={styles.form}
+        netlify
+        netlify-honeypot='bot-field'
         data-netlify-recaptcha='true'
         data-netlify='true'
         method='POST'
